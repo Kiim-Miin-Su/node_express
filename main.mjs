@@ -16,6 +16,7 @@ app.get("/log_in", (req, res) => {
     console.log("log_in is called (GET)");
     console.log(req.query);
     res.status(200).send("log_in success");
+    res.render("result", { userid, userpw });
 })
 
 app.listen(3000, () => {

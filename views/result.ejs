@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .box {
+            display: inline-block;
+            padding: 2rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Login Successful ✅</h1>
+        <p><strong>User ID:</strong>
+            <%= userid %>
+        </p>
+        <p><strong>Password:</strong>
+            <%= userpw %>
+        </p>
+    </div>
+</body>
+
+</html>
