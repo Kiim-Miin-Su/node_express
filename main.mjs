@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // 뿌려주는 페이지
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "log_in.html"));
-});
+}); //
 
 // EJS 세팅
 app.set("view engine", "ejs");
