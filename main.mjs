@@ -12,12 +12,13 @@ app.get("/", (req, res) => {
         }
     });
 });
-app.get("/log_in", (req, res) => {
-    console.log("log_in is called (GET)");
-    console.log(req.query);
-    res.status(200).send("log_in success");
-    res.render("result", { userid, userpw });
-})
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+app.get("/login", (req, res) => {
+    const { userid, userpw } = req.query;
+    res.render("result", { userid, userpw }); // ejs 렌더링
+});
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
