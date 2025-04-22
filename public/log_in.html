@@ -17,22 +17,19 @@
     const button = document.getElementById("submit");
 
     button.addEventListener("click", () => {
-
         const input_user_id = document.getElementById("input_user_id").value;
         const input_user_pw = document.getElementById("input_user_pw").value;
 
-        fetch(`/log_in?input_user_id=${input_user_id}&input_user_pw=${input_user_pw}`)
+        fetch(`/login?userid=${input_user_id}&userpw=${input_user_pw}`)
             .then((response) => {
-                if (response.ok) { // 응답 상태 체크
+                if (response.ok) {
                     return response.text();
                 } else {
                     throw new Error(`Server error: ${response.status}`);
                 }
             })
             .then((data) => {
-                alert(data); // 서버에서 받은 응답 데이터
-                console.log("Success:", data);
-                window.location.href = "/result.html"
+                document.body.innerHTML = data; // 서버에서 받은 HTML을 페이지에 출력
             })
             .catch((error) => {
                 console.error("Error:", error);
