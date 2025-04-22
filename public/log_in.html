@@ -23,13 +23,15 @@
         fetch(`/login?userid=${input_user_id}&userpw=${input_user_pw}`)
             .then((response) => {
                 if (response.ok) {
+                    console.log(response)
                     return response.text();
                 } else {
                     throw new Error(`Server error: ${response.status}`);
                 }
             })
             .then((data) => {
-                document.body.innerHTML = data; // 서버에서 받은 HTML을 페이지에 출력
+                console.log(data);
+                document.body.innerHTML = data;
             })
             .catch((error) => {
                 console.error("Error:", error);
