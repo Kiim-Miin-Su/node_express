@@ -1,0 +1,10 @@
+name: node-express-login
+app: node
+
+options:
+  env:
+    - name: NODE_ENV
+      value: production
+  ports: 3000
+  install: npm install
+  start: npm start
